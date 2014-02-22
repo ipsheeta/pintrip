@@ -15,5 +15,8 @@
 	],
 	"content_scripts": [
 		{ "matches": ["http://*/*"], "js": ["pinpedia_content_script.js"] }
+	],
+	"web_accessible_resources": [
+		"myframe.html"
 	]
 }
