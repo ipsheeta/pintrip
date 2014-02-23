@@ -10,6 +10,16 @@ if (window==top) {
 
 
 function somethingDoIt() {
+	var request = new XMLHttpRequest();
+	var response;
+	request.open('GET', 'http://api.ean.com/ean-services/rs/hotel/v3/geoSearch?destinationString=tokyo&apiKey=awvkfpca9wprk3c3gbwj596u&_type=json');
+	request.send()
+	request.onreadystatechange = function() {
+		if (this.readyState == 4) {
+			response = JSON.parse(this.response);
+			console.log('response', response);
+		}
+	};
 	console.log('WE DID IT');
 	var iframe = document.createElement("iframe");
 	iframe.style.position = "relative";
