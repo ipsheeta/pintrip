@@ -1,12 +1,13 @@
-function requestExpedia(description) {
+function requestExpedia(description, callback) {
 	var request = new XMLHttpRequest();
 	var response;
-	request.open('GET', 'http://api.ean.com/ean-services/rs/hotel/v3/geoSearch?destinationString=tokyo&apiKey=awvkfpca9wprk3c3gbwj596u&_type=json');
+	request.open('GET', 'http://api.ean.com/ean-services/rs/hotel/v3/list?destinationString='+description+'&apiKey=awvkfpca9wprk3c3gbwj596u&_type=json');
 	request.send()
 	request.onreadystatechange = function() {
 		if (this.readyState == 4) {
 			response = JSON.parse(this.response);
 			console.log('response', response);
+      callback(response.HotelListResponse.HotelList.HotelSummary[0]);
 		}
 	}
 
@@ -68,7 +69,7 @@ function requestExpedia(description) {
 	// STEP #4: send lat/long to expedia to return hotel
 
 
-
+return response;
 }
 requestExpedia();
 window.requestExpedia = requestExpedia;

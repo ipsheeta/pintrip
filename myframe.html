@@ -9,10 +9,9 @@
 
       img {
         margin: 5px;
-        border: 2px solid black;
         vertical-align: middle;
-        width: 75px;
-        height: 75px;
+        width: 25px;
+        height: 25px;
       }
 
       #container {
@@ -35,17 +34,26 @@
     <!-- // <script src="popup.js"></script> -->
     <script src="https://js.arcgis.com/3.8/"></script>
     <script type="text/javascript" src="handlebars.js"></script>
-    <!-- // <script type="text/javascript" src="models.js"></script> -->
+    // <script type="text/javascript" src="models.js"></script>
+
   </head>
   <body style="background-color: red; margin: 0;">
   
     <div id="container" style="background-color: #25b0a1;">
       <div id="card" style="">
-        <h1>Meguro River</h1>
-        <h1 class="bold">Tokyo, Japan</h1>
+
       </div>
-      <img id="clicker" src="http://farm4.static.flickr.com/3701/9776671056_c0e9303c5a_s.jpg" alt="Cat and his look.">
+      <img height="25" width="25" id="clicker" src="icon.png">
     </div>
+      <script class="template" type="text/x-handlebars-template">
+        <h1>{{city}}</h1>
+        <h1 class="bold">{{countryCode}}</h1>
+        <p>{{name}}</p>
+        <p>{{tripAdvisorRating}}</p>
+        <p>Starting at</p>
+        <p>{{lowRate}}</p>
+        <a href="{{deepLink}}">Book Hotel</a>
+    </script>
     <script type="text/javascript" src="template.js">
 
     </script>
