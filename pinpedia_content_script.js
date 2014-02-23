@@ -13,6 +13,7 @@ function createIframe() {
 	iframe.style.position = "relative";
 	iframe.style.zIndex = 1000;
 	iframe.style.border = "1px";
+	iframe.style.margin = "14px 7px 0 7px";
 	iframe.hover_over = null;
 	iframe.style.display = 'none';
 	var myframe = chrome.extension.getURL("myframe.html");
@@ -54,9 +55,17 @@ function somethingDoIt() {
 				console.log('enter', this, iframe.style);
 				iframe.style.top = this.style.top;
 				iframe.style.left = this.style.left;
+				var height = this.offsetHeight;
+				var width = this.offsetWidth;
+				iframe.style.height = height + 'px';
+				iframe.style.width = width + 'px';
 				iframe.style.display = 'inline';
 				iframe.hover_over = this;
-				sendMessage({command:'render', data: description});
+				sendMessage({command:'render',
+					data: description,
+					height: height,
+					width: width
+			    });
 			}
 		};
 		items[i].onmouseleave = function(e) {
