@@ -22,10 +22,7 @@ function createIframe() {
 	console.log('iframe created');
 }
 
-function sendMessage() {
-	var message = {
-		command: 'render',
-	};
+function sendMessage(message) {
 	iframe.contentWindow.postMessage(message, '*');
 	// chrome.extension.sendMessage(message);
 }
@@ -49,15 +46,17 @@ function somethingDoIt() {
 	iframe.onmouseleave = function(e){};
 
 	var items = document.getElementsByClassName('item');
+	var description;
 	for (var i=0; i<items.length; i++) {
 		items[i].onmouseenter = function(e) {
 			if (this !== iframe.hover_over) {
+				description = this.getElementsByClassName('pinDescription')[0].innerHTML;
 				console.log('enter', this, iframe.style);
 				iframe.style.top = this.style.top;
 				iframe.style.left = this.style.left;
 				iframe.style.display = 'inline';
 				iframe.hover_over = this;
-				sendMessage();
+				sendMessage({command:'render', data: description});
 			}
 		};
 		items[i].onmouseleave = function(e) {
