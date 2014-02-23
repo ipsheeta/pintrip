@@ -14,7 +14,7 @@
 		"https://*/*"
 	],
 	"content_scripts": [
-		{ "matches": ["http://*/*"], "js": ["pinpedia_content_script.js"] }
+		{ "matches": ["http://*/*"], "js": ["pinpedia_content_script.js", "models.js"] }
 	],
 	"web_accessible_resources": [
 		"myframe.html"
