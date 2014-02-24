@@ -4,7 +4,8 @@
     <style>
       body {
         overflow-x: hidden;
-        font-family: sans-serif;
+
+	font-color: white;
       }
 
       img {
@@ -12,6 +13,7 @@
         vertical-align: middle;
         width: 25px;
         height: 25px;
+	display: inline-block;
       }
 
       #container {
@@ -25,6 +27,34 @@
       .bold {
         font-weight: bold;
       }
+
+      .btn {
+
+      }
+
+      .favorite {
+	width: 10px;
+	height: 10px;
+      }
+
+      .hotel {
+
+      }    
+
+      .offer {
+
+      }    
+
+      .title {
+	font-size: 14px;
+	font-weight: bold;
+      }
+       
+      .underline {
+
+      }
+
+       
     </style>
 
     <!--
@@ -48,13 +78,23 @@
       <img height="25" width="25" id="clicker" src="icon.png">
     </div>
       <script class="template" type="text/x-handlebars-template">
-        <h1>{{city}}</h1>
-        <h1 class="bold">{{countryCode}}</h1>
-        <p>{{name}}</p>
-        <p>{{tripAdvisorRating}} out of 5 stars</p>
-        <p>Starting at:</p>
-        <p>${{lowRate}}</p>
-        <a href="{{deepLink}}">Book Hotel</a>
+
+	<div class="title">
+		<img class="favorite" src="#hearticon.png" />
+		<h1>{{city}}, <b>{{countryCode}}</b></h1>
+	</div>
+        <hr class="underline" style="color:white;">
+	<div class="hotel">
+		<h1>{{name}}</h1>
+	        <p>{{tripAdvisorRating}}</p>
+	</div>
+	<div class="offer">
+        	<p>Starting at</p>
+        	<p>{{lowRate}}</p>
+        	<div class="btn">
+			<a href="{{deepLink}}">Book Hotel</a>
+		</div>
+	</div>
     </script>
     <script type="text/javascript" src="template.js">
 
