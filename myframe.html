@@ -6,7 +6,6 @@
         overflow-x: hidden;
         font-family: 'Ropa Sans', sans-serif;
 	      color: white;
-
       }
 
       img {
@@ -22,7 +21,9 @@
 
 
       }
+
       h1 {
+        margin: 0;
         font-weight: normal;
         font-size: 18px;
       }
@@ -85,10 +86,10 @@
     <script type="text/javascript" src="models.js"></script>
 
   </head>
-  <body style="background-color: red; margin: 0;">
+  <body style="background-color: transparent; margin: 0;">
   
-    <div id="container" style="background-color: #25b0a1;">
-      <div id="card" style="">
+    <div id="container" style="background-color: transparent;">
+      <div id="card" style="display: none; background-color: #25b0a1;">
 
       </div>
       <img height="25" width="25" id="clicker" src="icon.png">
@@ -102,6 +103,7 @@
     <hr class="underline">
     <div class="destination">{{city}}, {{countryCode}}</div>
   </div>
+
 	<div class="hotel">
 		<h1>{{name}}</h1>
 	        <p>{{tripAdvisorRating}}</p>
