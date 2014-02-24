@@ -4,7 +4,7 @@
     <style>
       body {
         overflow-x: hidden;
-        font: Arial;
+        font-family: sans-serif;
       }
 
       img {
@@ -15,9 +15,11 @@
       }
 
       #container {
-
+        padding: 10px;
       }
+
       h1 {
+        margin: 0;
         font-weight: normal;
       }
       .bold {
@@ -34,13 +36,13 @@
     <!-- // <script src="popup.js"></script> -->
     <script src="https://js.arcgis.com/3.8/"></script>
     <script type="text/javascript" src="handlebars.js"></script>
-    // <script type="text/javascript" src="models.js"></script>
+    <script type="text/javascript" src="models.js"></script>
 
   </head>
-  <body style="background-color: red; margin: 0;">
+  <body style="background-color: transparent; margin: 0;">
   
-    <div id="container" style="background-color: #25b0a1;">
-      <div id="card" style="">
+    <div id="container" style="background-color: transparent;">
+      <div id="card" style="display: none; background-color: #25b0a1;">
 
       </div>
       <img height="25" width="25" id="clicker" src="icon.png">
@@ -49,9 +51,9 @@
         <h1>{{city}}</h1>
         <h1 class="bold">{{countryCode}}</h1>
         <p>{{name}}</p>
-        <p>{{tripAdvisorRating}}</p>
-        <p>Starting at</p>
-        <p>{{lowRate}}</p>
+        <p>{{tripAdvisorRating}} out of 5 stars</p>
+        <p>Starting at:</p>
+        <p>${{lowRate}}</p>
         <a href="{{deepLink}}">Book Hotel</a>
     </script>
     <script type="text/javascript" src="template.js">
