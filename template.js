@@ -12,7 +12,8 @@ window.addEventListener("message", function(e) {
 	var data = e.data;
 	if (data.command === 'render') {
 		container.style.height = data.height + 'px';
-		container.style.width = data.width + 'px';
+//		container.style.width = data.width + 'px';
+		container.style.width = '216px'; // for pinterest only
 		requestExpedia(data.data, function(response) {
 			card.innerHTML = card_template(response);
 		});

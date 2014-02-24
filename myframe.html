@@ -4,8 +4,9 @@
     <style>
       body {
         overflow-x: hidden;
-        font: Arial;
-	font-color: white;
+        font-family: 'Ropa Sans', sans-serif;
+	      color: white;
+
       }
 
       img {
@@ -13,26 +14,42 @@
         vertical-align: middle;
         width: 25px;
         height: 25px;
-	display: inline-block;
+	      display: inline-block;
       }
 
       #container {
+        padding: 10px;
+
 
       }
       h1 {
         font-weight: normal;
+        font-size: 18px;
       }
+
       .bold {
         font-weight: bold;
       }
 
       .btn {
-
+        background-color: #fcd33d;
+        border:1px solid black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        height: 40px;
+        color: white;
+        text-align: center;
       }
 
       .favorite {
-	width: 10px;
-	height: 10px;
+      	width: 10px;
+        height: 10px;
+      }
+
+      .header {
+        text-align: right;      
       }
 
       .hotel {
@@ -44,8 +61,9 @@
       }    
 
       .title {
-	font-size: 14px;
-	font-weight: bold;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
       }
        
       .underline {
@@ -76,18 +94,21 @@
       <img height="25" width="25" id="clicker" src="icon.png">
     </div>
       <script class="template" type="text/x-handlebars-template">
-	<div class="title">
-		<img class="favorite" src="#hearticon.png" />
-		<h1>{{city}}, <b>{{countryCode}}</b></h1>
-	</div>
-        <hr class="underline" style="color:white;">
+	<div class="header">
+    <div class="title">
+		  <img class="favorite" src="#hearticon.png" />
+      Point of Interest
+    </div>
+    <hr class="underline">
+    <div class="destination">{{city}}, {{countryCode}}</div>
+  </div>
 	<div class="hotel">
 		<h1>{{name}}</h1>
 	        <p>{{tripAdvisorRating}}</p>
 	</div>
 	<div class="offer">
         	<p>Starting at</p>
-        	<p>{{lowRate}}</p>
+        	<p>${{lowRate}} a night</p>
         	<div class="btn">
 			<a href="{{deepLink}}">Book Hotel</a>
 		</div>
